@@ -15,4 +15,8 @@ public class RegisterRequest {
     private String password;
     @Email(message = "Email should be valid")
     private String email;
+    // add role field
+//    @NotBlank(message = "Role is required")
+//    @Pattern(regexp = "^(USER|ADMIN)$", message = "Role must be either USER or ADMIN")
+//    private String role;
 }

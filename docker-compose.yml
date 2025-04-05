@@ -16,6 +16,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - springmicrohub-network
 
   # Zookeeper for Kafka
   zookeeper:
@@ -32,6 +34,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - springmicrohub-network
 
   # Kafka Messaging
   kafka:
@@ -58,6 +62,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - springmicrohub-network
 
   # Kafka UI for Monitoring
   kafka-ui:
@@ -72,6 +78,24 @@ services:
       - KAFKA_CLUSTERS_0_ZOOKEEPER=springmicrohub-zookeeper:2181  # Updated to match container name
     depends_on:
       - kafka
+    networks:
+      - springmicrohub-network
+
+  # pgAdmin for PostgreSQL UI
+  pgadmin:
+    container_name: springmicrohub-pgadmin
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@springmicrohub.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "8090:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin  # Persistent storage for pgAdmin settings
+    depends_on:
+      - postgres
+    networks:
+      - springmicrohub-network
 
 volumes:
   zookeeper_data:
@@ -80,3 +104,9 @@ volumes:
     driver: local
   postgres_data:
     driver: local
+  pgadmin-data:
+    driver: local
+
+networks:
+  springmicrohub-network:
+    driver: bridge
