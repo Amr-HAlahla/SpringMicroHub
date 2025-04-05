@@ -1,12 +1,11 @@
 # SpringMicroHub
-**A Modern Microservices Architecture Built with Spring Boot**  
-
-SpringMicroHub is a robust, scalable, and production-ready microservices ecosystem built using Spring Boot and Spring Cloud. This project demonstrates my expertise in designing distributed systems, integrating cutting-edge backend technologies, and deploying cloud-native applications. It serves as a showcase of my skills in microservices architecture, containerization, and event-driven design.
 
 ---
 
 ## Project Overview
-SpringMicroHub is a modular microservices application designed to manage core backend functionalities such as authentication, file storage, and configuration management. It leverages Spring Cloud components and modern tools to ensure seamless service communication, resilience, and scalability.
+**A Modern Microservices Architecture Built with Spring Boot**
+
+SpringMicroHub is a robust, scalable, and production-ready microservices ecosystem built using Spring Boot and Spring Cloud. This project demonstrates my expertise in designing distributed systems, integrating cutting-edge backend technologies, and deploying cloud-native applications. It serves as a showcase of my skills in microservices architecture, containerization, and event-driven design.
 
 ### Key Features
 - **API Gateway**: Centralized routing and load balancing with Spring Cloud Gateway.
