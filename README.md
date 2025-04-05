@@ -246,6 +246,13 @@ SpringMicroHub is a robust, scalable, and production-ready microservices ecosyst
       <td><a href="#getAllNotificationByUserId">Info</a></td>
   </tr>
  <tr>
+      <td>POST</td>
+      <td>/v1/file-storage/upload</td>
+      <td>Upload image to file storage</td>
+      <td></td>
+      <td><a href="#uploadImage">Info</a></td>
+  </tr>
+ <tr>
       <td>GET</td>
       <td>/v1/file-storage/download/{id}</td>
       <td>Download image to file storage</td>
@@ -596,6 +603,18 @@ SpringMicroHub is a robust, scalable, and production-ready microservices ecosyst
     Bearer Token : User Token
 ```
 
+##### <a id="uploadImage">Upload Image to File Storage
+``` 
+    http://localhost:8080/v1/file-storage/upload
+    
+    form-data:
+    {
+      "file": "string"
+    }
+    
+    Bearer Token : User Token
+```
+
 
 ### 🔨 Run the App
 
@@ -632,8 +651,6 @@ file-storage</b>)
     <img src ="screenshots/offer-job.png" alt="">
     <p> Auth Service Swagger UI </p>
     <img src ="screenshots/auth.png" alt="">
-    <p>Notification Kafka UI</p>
-    <img src ="screenshots/kafka-ui.png" alt="">
     <p>File Storage Postman</p>
     <img src ="screenshots/file-upload.png" alt="">
     <img src ="screenshots/file-download.png" alt="">
