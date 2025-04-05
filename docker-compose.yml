@@ -5,8 +5,8 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: SpringHub2025  # Stronger password for portfolio
-      POSTGRES_DB: springmicrohub_db    # Renamed to match project
+      POSTGRES_PASSWORD: SpringHub2025
+      POSTGRES_DB: springmicrohub_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -75,7 +75,7 @@ services:
     environment:
       - KAFKA_CLUSTERS_0_NAME=local
       - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=springmicrohub-kafka:9093
-      - KAFKA_CLUSTERS_0_ZOOKEEPER=springmicrohub-zookeeper:2181  # Updated to match container name
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=springmicrohub-zookeeper:2181
     depends_on:
       - kafka
     networks:
@@ -91,7 +91,7 @@ services:
     ports:
       - "8090:80"
     volumes:
-      - pgadmin-data:/var/lib/pgadmin  # Persistent storage for pgAdmin settings
+      - pgadmin-data:/var/lib/pgadmin
     depends_on:
       - postgres
     networks:
